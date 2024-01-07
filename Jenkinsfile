@@ -4,6 +4,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                script {
+                    for (int i=0; i<10; i++) {
+                        echo("Script ${i}")
+                    }
+                }
                 echo 'Hello Build'
                 echo 'Hello Build'
                 echo 'Hello Build'
