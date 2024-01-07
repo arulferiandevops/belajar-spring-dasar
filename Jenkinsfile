@@ -12,6 +12,15 @@ pipeline {
         password(name: "SECRET", defaultValue: "", description: "What is yout name")
     }
     stages {
+        stage("paramater") {
+            steps{
+                echo("name : ${params.NAME}")
+                echo("you are : ${params.DESCRIPTION}")
+                echo("your social media : ${params.SOCIAL_MEDIA}")
+                echo("need to deploy? : ${params.DEPLOY}")
+                echo("password : ${params.SECRET}")
+            }
+        }
         stage('Prepare') {
             environment {
                 APP = credentials("arul")
