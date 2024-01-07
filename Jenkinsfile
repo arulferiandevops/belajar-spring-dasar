@@ -12,13 +12,13 @@ pipeline {
                 echo 'Hello Build'
                 echo 'Hello Build 7'
                 sh("./mvnw clean compile test-compile")
-
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Hello Test'
+                sh("./mvnw test")
             }
         }
 
