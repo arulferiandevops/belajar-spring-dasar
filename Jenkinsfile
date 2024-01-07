@@ -66,6 +66,9 @@ pipeline {
                 message "Can we deploy?"
                 ok "Yes. silakan"
                 submitter "arulferiandevops"
+                parameters {
+                    choice(name: "TARGET_ENV", choices:['DEV','QA','PROD'], description: "Mau didpeloy dimana?")
+                }
             }
             steps {
                 echo 'Hello Deploy'
