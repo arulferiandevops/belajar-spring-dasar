@@ -4,9 +4,12 @@ pipeline {
         AUTHOR = "Arul Ferian Ramadloni"
         EMAIL = "arulferianramadloni@gmail.com"
     }
-    options {
-        disableConcurrentBuilds()
-        timeout(time:10, unit:'MINUTES')
+    parameters {
+        string(name: "NAME", defaultValue: "Guest", description: "What is yout name")
+        text(name: "DESCRIPTION", defaultValue: "Guest", description: "What is yout name")
+        booleanParam(name: "DEPLOY", defaultValue: false, description: "Mau dideploy?")
+        choice(name: "SOCIAL_MEDIA", choices: ['Instagram', 'Fb', 'X'], description: "What is yout name")
+        password(name: "SECRET", defaultValue: "", description: "What is yout name")
     }
     stages {
         stage('Prepare') {
