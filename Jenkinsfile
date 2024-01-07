@@ -1,6 +1,9 @@
 pipeline {
     agent any
-
+    environment {
+        AUTHOR = "Arul Ferian Ramadloni"
+        EMAIL = "arulferianramadloni@gmail.com"
+    }
     stages {
         stage('Prepare') {
             steps {
@@ -17,12 +20,8 @@ pipeline {
                     }
                 }
                 echo 'Hello Build'
-                echo 'Hello Build'
-                echo 'Hello Build'
-                echo 'Hello Build'
-                echo 'Hello Build'
-                echo 'Hello Build'
-                echo 'Hello Build 7'
+                echo("Author ${AUTHOR}")
+                echo("Email ${EMAIL}")
                 sh("./mvnw clean compile test-compile")
             }
         }
