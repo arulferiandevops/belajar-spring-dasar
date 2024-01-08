@@ -12,6 +12,26 @@ pipeline {
         password(name: "SECRET", defaultValue: "", description: "What is yout name")
     }
     stages {
+        stage('Preparation') {
+            stages {
+                stage('prepare java') {
+                    steps {
+                        echo('prepare java')
+                    }
+                }
+                stage('prepare maven') {
+                    steps {
+                        echo('prepare maven')
+                    }
+                }
+                stage('prepare c') {
+                    steps {
+                        echo('prepare c')
+                    }
+                }
+            }
+        }
+
         stage("paramater") {
             steps{
                 echo("name : ${params.NAME}")
